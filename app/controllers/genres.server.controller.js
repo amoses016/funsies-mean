@@ -49,14 +49,37 @@ exports.read = function(req, res) {
  * Update a Genre
  */
 exports.update = function(req, res) {
-
+	var genre = req.genre;
+ 
+	genre = _.extend(genre, req.body);
+ 
+	genre.save(function(err) {
+		if (err) {
+			return res.status(400).send({
+				message: errorHandler.getErrorMessage(err)
+			});
+		} else {
+			res.json(genre);
+		}
+	});
+ 
 };
 
 /**
  * Delete an Genre
  */
 exports.delete = function(req, res) {
-
+	var genre = req.genre;
+ 
+	genre.remove(function(err) {
+		if (err) {
+			return res.status(400).send({
+				message: errorHandler.getErrorMessage(err)
+			});
+		} else {
+			res.json(genre);
+		}
+	});
 };
 
 /**
