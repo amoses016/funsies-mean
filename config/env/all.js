@@ -3,7 +3,7 @@
 module.exports = {
 	app: {
 		title: 'AMDB',
-		description: 'Movies That I've Seen (Allison's Movie DataBase)',
+		description: 'Allison\'s Movie DataBase',
 		keywords: 'MongoDB, Express, AngularJS, Node.js'
 	},
 	port: process.env.PORT || 3000,
