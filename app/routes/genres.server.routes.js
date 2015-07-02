@@ -6,4 +6,7 @@ module.exports = function(app) {
     app.route('/genres')
       .get(genres.list)
       .post(genres.create);
+    
+    app.route('/genres/:genreId')
+        .get(genres.read);
 };

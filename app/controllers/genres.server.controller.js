@@ -29,7 +29,7 @@ exports.create = function(req, res) {
  * Show the current Genre
  */
 exports.read = function(req, res) {
-    Genre.findById(req.params.categoryId).exec(function(err,category) {
+    Genre.findById(req.params.genreId).exec(function(err,genre) {
         if (err) {
             return res.status(400).send({
                 message: errorHandler.getErrorMessage(err)
