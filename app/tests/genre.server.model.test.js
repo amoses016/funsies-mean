@@ -10,7 +10,7 @@ var should = require('should'),
 /**
  * Unit tests
  */
-describe('Genre Model', function() {
+describe('Genre Model Unit Tests', function() {
     describe('Saving', function() {
         it('saves new record', function(done) {
             var category = new Genre({
