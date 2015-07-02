@@ -29,7 +29,20 @@ exports.create = function(req, res) {
  * Show the current Genre
  */
 exports.read = function(req, res) {
-
+    Genre.findById(req.params.categoryId).exec(function(err,category) {
+        if (err) {
+            return res.status(400).send({
+                message: errorHandler.getErrorMessage(err)
+            });
+        } else {
+            if (!genre) {
+                return res.status(404).send({
+                    message: 'Genre not found'
+                });
+            }
+            res.json(genre);
+        }
+    });
 };
 
 /**
