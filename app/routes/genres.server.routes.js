@@ -1,6 +1,9 @@
 'use strict';
 
 module.exports = function(app) {
-	// Routing logic   
-	// ...
+    var genres = require('../../app/controllers/genres.server.controller');
+
+    app.route('/genres')
+      .get(genres.list)
+      .post(genres.create);
 };
