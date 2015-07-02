@@ -28,7 +28,14 @@ exports.create = function(req, res) {
 /**
  * Show the current Genre
  */
-exports.read = function(req, res) {
+exports.read = function(req,res) {
+    res.json(req.genre);
+};
+
+/**
+ * Show the Genre by ID
+ */
+exports.genreByID = function(req, res) {
     Genre.findById(req.params.genreId).exec(function(err,genre) {
         if (err) {
             return res.status(400).send({
