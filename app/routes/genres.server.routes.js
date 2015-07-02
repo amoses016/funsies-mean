@@ -8,5 +8,7 @@ module.exports = function(app) {
       .post(genres.create);
     
     app.route('/genres/:genreId')
-        .get(genres.read);
+        .get(genres.read)
+        .put(genres.update)
+        .delete(genres.delete);
 };
