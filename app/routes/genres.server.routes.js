@@ -2,7 +2,7 @@
 
 module.exports = function(app) {
     var genres = require('../../app/controllers/genres.server.controller');
-    var users = require('/../../app/controllers/users.server.controller');
+    var users = require('../../app/controllers/users.server.controller');
 
     app.route('/genres')
       .get(genres.list)
